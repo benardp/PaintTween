@@ -105,13 +105,4 @@ Once the interface loads, try:
    hit the "refresh" button. 
 
 
-
-## CONTACT
-
-If you have questions about the source or the project, contact:
-
-Pierre Benard <pierre.benard@laposte.net>
-Forrester Cole <fcole@pixar.com>
-Michael Kass <kass@pixar.com>
-
 July 17 2013 - Modified Jan. 14 2015
