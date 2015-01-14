@@ -9,7 +9,7 @@ Pixar Technical Memo #13-03 (presented at SIGGRAPH 2013)
 
 The original paper, source, and data are available here:
 
-graphics.pixar.com/library/ByExampleStylization/
+http://graphics.pixar.com/library/ByExampleStylization/
 
 Copyright (c) 2013 by Disney-Pixar
 
