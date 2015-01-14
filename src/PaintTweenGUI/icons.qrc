@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/Back.png</file>
+        <file>icons/Forward.png</file>
+        <file>icons/Pause.png</file>
+        <file>icons/Refresh.png</file>
+        <file>icons/Step.png</file>
+        <file>icons/StepBack.png</file>
+        <file>icons/Checkerboard.png</file>
+    </qresource>
+</RCC>
