@@ -1,94 +1,99 @@
-# - Find OpenEXR library
-# Find the native OpenEXR includes and library
-# This module defines
-#  OPENEXR_INCLUDE_DIRS, where to find ImfXdr.h, etc. Set when
-#                        OPENEXR_INCLUDE_DIR is found.
-#  OPENEXR_LIBRARIES, libraries to link against to use OpenEXR.
-#  OPENEXR_ROOT_DIR, The base directory to search for OpenEXR.
-#                    This can also be an environment variable.
-#  OPENEXR_FOUND, If false, do not try to use OpenEXR.
+# Try to find the OpenEXR libraries
+# This check defines:
 #
-# For individual library access these advanced settings are available
-#  OPENEXR_HALF_LIBRARY, Path to Half library
-#  OPENEXR_IEX_LIBRARY, Path to Half library
-#  OPENEXR_ILMIMF_LIBRARY, Path to Ilmimf library
-#  OPENEXR_ILMTHREAD_LIBRARY, Path to IlmThread library
-#  OPENEXR_IMATH_LIBRARY, Path to Imath library
+#  OPENEXR_FOUND - system has OpenEXR
+#  OPENEXR_INCLUDE_DIR - OpenEXR include directory
+#  OPENEXR_LIBRARIES - Libraries needed to use OpenEXR
 #
-# also defined, but not for general use are
-#  OPENEXR_LIBRARY, where to find the OpenEXR library.
-
-#=============================================================================
-# Copyright 2011 Blender Foundation.
+# Copyright (c) 2006, Alexander Neundorf, <neundorf@kde.org>
 #
-# Distributed under the OSI-approved BSD License (the "License");
-# see accompanying file Copyright.txt for details.
-#
-# This software is distributed WITHOUT ANY WARRANTY; without even the
-# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See the License for more information.
-#=============================================================================
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# If OPENEXR_ROOT_DIR was defined in the environment, use it.
-IF(NOT OPENEXR_ROOT_DIR AND NOT $ENV{OPENEXR_ROOT_DIR} STREQUAL "")
-  SET(OPENEXR_ROOT_DIR $ENV{OPENEXR_ROOT_DIR})
-ENDIF()
 
-SET(_openexr_FIND_COMPONENTS
-  Half
-  Iex
-  IlmImf
-  IlmThread
-  Imath
-)
+if (OPENEXR_INCLUDE_DIR AND OPENEXR_LIBRARIES)
+  # in cache already
+  SET(OPENEXR_FOUND TRUE)
 
-SET(_openexr_SEARCH_DIRS
-  ${OPENEXR_ROOT_DIR}
-  /usr/local
-  /sw # Fink
-  /opt/local # DarwinPorts
-  /opt/csw # Blastwave
-  c:/LIB/OpenEXR-x64.vc10/lib/
-)
+else (OPENEXR_INCLUDE_DIR AND OPENEXR_LIBRARIES)
+IF (NOT WIN32 OR MINGW)
+  # use pkg-config to get the directories and then use these values
+  # in the FIND_PATH() and FIND_LIBRARY() calls
+  INCLUDE(UsePkgConfig)
+  
+  PKGCONFIG(OpenEXR _OpenEXRIncDir _OpenEXRLinkDir _OpenEXRLinkFlags _OpenEXRCflags)
+ENDIF (NOT WIN32 OR MINGW)
+  FIND_PATH(OPENEXR_INCLUDE_DIR ImfRgbaFile.h
+     ${_OpenEXRIncDir}
+     ${_OpenEXRIncDir}/OpenEXR/
+     /usr/include
+     /usr/local/include
+     $ENV{PROGRAM_FILES}/openexr/include
+  )
+  
+  FIND_LIBRARY(OPENEXR_HALF_LIBRARY NAMES Half
+    PATHS
+    ${_OPENEXRLinkDir}
+    ${SYSTEM_LIB_DIRS}
+	${OPENEXR_LIBRARY_DIR}
+  )
 
-FIND_PATH(OPENEXR_INCLUDE_DIR
-  NAMES
-    ImfXdr.h
-  HINTS
-    ${_openexr_SEARCH_DIRS}
-  PATH_SUFFIXES
-    include/OpenEXR
-)
+  FIND_LIBRARY(OPENEXR_IEX_LIBRARY NAMES Iex
+    PATHS
+    ${_OPENEXRLinkDir}
+    ${SYSTEM_LIB_DIRS}
+	${OPENEXR_LIBRARY_DIR}
+  )
 
-SET(_openexr_LIBRARIES)
-FOREACH(COMPONENT ${_openexr_FIND_COMPONENTS})
-  STRING(TOUPPER ${COMPONENT} UPPERCOMPONENT)
-
-  FIND_LIBRARY(OPENEXR_${UPPERCOMPONENT}_LIBRARY
-    NAMES
-      ${COMPONENT}
-    HINTS
-      ${_openexr_SEARCH_DIRS}
-    PATH_SUFFIXES
-      lib64 lib
-    )
-  LIST(APPEND _openexr_LIBRARIES "${OPENEXR_${UPPERCOMPONENT}_LIBRARY}")
-ENDFOREACH()
-
-# handle the QUIETLY and REQUIRED arguments and set OPENEXR_FOUND to TRUE if 
-# all listed variables are TRUE
-INCLUDE(FindPackageHandleStandardArgs)
-FIND_PACKAGE_HANDLE_STANDARD_ARGS(OpenEXR  DEFAULT_MSG
-    _openexr_LIBRARIES OPENEXR_INCLUDE_DIR)
-
-IF(OPENEXR_FOUND)
-  SET(OPENEXR_LIBRARIES ${_openexr_LIBRARIES})
-  SET(OPENEXR_INCLUDE_DIRS ${OPENEXR_INCLUDE_DIR})
-  message("OPENEXR_LIBRARIES=${OPENEXR_LIBRARIES}")
-ENDIF()
-
-MARK_AS_ADVANCED(OPENEXR_INCLUDE_DIR)
-FOREACH(COMPONENT ${_openexr_FIND_COMPONENTS})
-  STRING(TOUPPER ${COMPONENT} UPPERCOMPONENT)
-  MARK_AS_ADVANCED(OPENEXR_${UPPERCOMPONENT}_LIBRARY)
-ENDFOREACH()
+  FIND_LIBRARY(OPENEXR_ILMTHREAD_LIBRARY NAMES IlmThread
+    PATHS
+    ${_OPENEXRLinkDir}
+    ${SYSTEM_LIB_DIRS}
+	${OPENEXR_LIBRARY_DIR}
+  )
+  
+  FIND_LIBRARY(OPENEXR_IMATH_LIBRARY NAMES Imath
+    PATHS
+    ${_OPENEXRLinkDir}
+    ${SYSTEM_LIB_DIRS}
+	${OPENEXR_LIBRARY_DIR}
+  )
+  
+  
+  FIND_LIBRARY(OPENEXR_ILMIMF_LIBRARY NAMES IlmImf 
+    PATHS
+    ${_OPENEXRLinkDir}
+    ${SYSTEM_LIB_DIRS}
+	${OPENEXR_LIBRARY_DIR}
+  )
+  
+  
+  if (OPENEXR_INCLUDE_DIR AND OPENEXR_IMATH_LIBRARY AND OPENEXR_ILMIMF_LIBRARY AND OPENEXR_IEX_LIBRARY AND OPENEXR_HALF_LIBRARY)
+     set(OPENEXR_FOUND TRUE)
+     if (OPENEXR_ILMTHREAD_LIBRARY)
+         set(OPENEXR_LIBRARIES ${OPENEXR_IMATH_LIBRARY} ${OPENEXR_ILMIMF_LIBRARY} ${OPENEXR_IEX_LIBRARY} ${OPENEXR_HALF_LIBRARY} ${OPENEXR_ILMTHREAD_LIBRARY})
+     else (OPENEXR_ILMTHREAD_LIBRARY)
+         set(OPENEXR_LIBRARIES ${OPENEXR_IMATH_LIBRARY} ${OPENEXR_ILMIMF_LIBRARY} ${OPENEXR_IEX_LIBRARY} ${OPENEXR_HALF_LIBRARY} CACHE STRING "The libraries needed to use OpenEXR")
+     endif (OPENEXR_ILMTHREAD_LIBRARY)
+  endif (OPENEXR_INCLUDE_DIR AND OPENEXR_IMATH_LIBRARY AND OPENEXR_ILMIMF_LIBRARY AND OPENEXR_IEX_LIBRARY AND OPENEXR_HALF_LIBRARY)
+  
+  if (OPENEXR_FOUND)
+    if (NOT OpenEXR_FIND_QUIETLY)
+      message(STATUS "Found OPENEXR: ${OPENEXR_LIBRARIES}")
+    endif (NOT OpenEXR_FIND_QUIETLY)
+  else (OPENEXR_FOUND)
+    if (OpenEXR_FIND_REQUIRED)
+      message(FATAL_ERROR "Could NOT find OPENEXR")
+    endif (OpenEXR_FIND_REQUIRED)
+  endif (OPENEXR_FOUND)
+  
+  MARK_AS_ADVANCED(
+     OPENEXR_INCLUDE_DIR 
+     OPENEXR_LIBRARIES 
+     OPENEXR_ILMIMF_LIBRARY 
+     OPENEXR_IMATH_LIBRARY 
+     OPENEXR_IEX_LIBRARY 
+     OPENEXR_HALF_LIBRARY
+     OPENEXR_ILMTHREAD_LIBRARY )
+  
+endif (OPENEXR_INCLUDE_DIR AND OPENEXR_LIBRARIES)

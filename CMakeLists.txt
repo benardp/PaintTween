@@ -25,6 +25,10 @@ find_package(OpenGL REQUIRED)
 find_package(OpenEXR REQUIRED)
 find_package(GLEW REQUIRED)
 
+IF (WIN32)
+	ADD_DEFINITIONS(-DOPENEXR_DLL)
+ENDIF ()
+
 # CUDA 
 set(CUDA_BUILD_CUBIN OFF)
 set(CUDA_BUILD_TYPE  Device)

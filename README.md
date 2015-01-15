@@ -40,7 +40,7 @@ That said, you can also make some pretty nice animations with it.
 
 You need at least the following to run this code:
 
-- Linux or Mac OS X (Windows may work, but hasn't been tested recently)
+- Linux, Mac OS X or Windows (tested on Windows 7, with Visual Studio 2012)
 - A CUDA-compatible GPU, capable of shader model 20. Fermi-architecture cards
    such as the Quadro 5000 or Geforce GTX580 work well.
 - CUDA 5.5 or later (and the corresponding version of gcc on Linux)
