@@ -28,7 +28,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLIMAGEVIEWERWIDGET_H
 #define NLIMAGEVIEWERWIDGET_H
 
-#include <QtGui/QMouseEvent>
+#include <QMouseEvent>
 
 #include "nlGLWidget.h"
 

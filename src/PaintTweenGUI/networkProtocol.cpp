@@ -28,6 +28,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include <iostream>
 #include <QtNetwork/QTcpSocket>
 #include <QtNetwork/QHostAddress>
+#include <QDataStream>
 
 #include "networkProtocol.h"
 

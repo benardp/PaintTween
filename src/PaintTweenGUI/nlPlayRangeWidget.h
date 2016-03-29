@@ -28,7 +28,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLPLAYRANGEWIDGET_H
 #define NLPLAYRANGEWIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class QLabel;
 class QSpinBox;

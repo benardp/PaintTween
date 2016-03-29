@@ -28,9 +28,9 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef _IMAGE_PYRAMID_H_
 #define _IMAGE_PYRAMID_H_
 
-#include <QtCore/QFile>
-#include <QtCore/QVector>
-#include <QtCore/QStringList>
+#include <QFile>
+#include <QVector>
+#include <QStringList>
 
 #include "downsample.h"
 

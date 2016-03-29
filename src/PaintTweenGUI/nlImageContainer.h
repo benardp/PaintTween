@@ -31,7 +31,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include "PaintTweenCUDA/types.h"
 #include "PaintTweenCUDA/dataAccess.h"
 
-#include <QtGui/QImage>
+#include <QImage>
 #include <QtCore/QString>
 #include <QtCore/QVector>
 

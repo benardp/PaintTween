@@ -29,7 +29,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include "PaintTweenCUDA/imageIO.h"
 
-#include "QtGui/QColor"
+#include "QColor"
 #include "QtCore/QString"
 
 #include <iostream>

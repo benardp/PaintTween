@@ -28,6 +28,11 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef _TEXSYNTH_KERNEL_H_
 #define _TEXSYNTH_KERNEL_H_
 
+#if _MSC_VER
+#define _USE_MATH_DEFINES
+#include <math.h>
+#endif
+
 #include <stdio.h>
 #include <assert.h>
 #include "texSynth_kernel.h"

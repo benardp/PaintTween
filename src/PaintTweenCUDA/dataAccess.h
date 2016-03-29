@@ -30,8 +30,8 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include "types.h"
 
-#include <QtCore/QVector>
-#include <QtCore/QStringList>
+#include <QVector>
+#include <QStringList>
 
 #include "imagePyramid.h"
 #include "texSynth_interface.h"

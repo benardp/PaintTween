@@ -28,7 +28,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLCONSOLEINTERFACE_H
 #define NLCONSOLEINTERFACE_H
 
-#include <QtCore/QString>
+#include <QString>
 
 #include "nlSynthesizer.h"
 

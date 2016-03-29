@@ -28,8 +28,8 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLSTYLETABWIDGET
 #define NLSTYLETABWIDGET
 
-#include <QtCore/QList>
-#include <QtGui/QTabWidget>
+#include <QList>
+#include <QTabWidget>
 
 #include "nlImageViewerWidget.h"
 

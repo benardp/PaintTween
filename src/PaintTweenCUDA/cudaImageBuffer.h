@@ -31,12 +31,11 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include "cudaHostUtil.h"
 #include "types.h"
 
-#include <cmath>
 #include <cstdio>
 #include <assert.h>
 
-#include <QtCore/QList>
-#include <QtCore/QVector>
+#include <QList>
+#include <QVector>
 
 #include <cuda_runtime.h>
 

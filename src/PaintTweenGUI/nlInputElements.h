@@ -28,9 +28,9 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLINPUTELEMENTS_H
 #define NLINPUTELEMENTS_H
 
-#include <QtCore/QString>
-#include <QtCore/QVector>
-#include <QtXml/QDomDocument>
+#include <QString>
+#include <QVector>
+#include <QDomDocument>
 
 #include "PaintTweenCUDA/dataAccess.h"
 

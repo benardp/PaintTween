@@ -28,8 +28,8 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLANIMATIONDIALOG_H
 #define NLANIMATIONDIALOG_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QProgressBar>
+#include <QDialog>
+#include <QProgressBar>
 
 #include "PaintTweenCUDA/progressCallback.h"
 

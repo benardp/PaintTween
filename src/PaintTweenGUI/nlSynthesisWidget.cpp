@@ -27,13 +27,13 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include "nlSynthesisWidget.h"
 #include "nlSynthesizer.h"
-#include <QtGui/QKeyEvent>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QCheckBox>
-#include <QtGui/QDoubleSpinBox>
-#include <QtGui/QSpinBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QLabel>
+#include <QKeyEvent>
+#include <QHBoxLayout>
+#include <QCheckBox>
+#include <QDoubleSpinBox>
+#include <QSpinBox>
+#include <QComboBox>
+#include <QLabel>
 #include <QtCore/QDebug>
 #include <iostream>
 #include <algorithm>

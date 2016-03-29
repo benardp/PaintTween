@@ -29,13 +29,13 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include <cmath>
 
-#include <QtGui/QFrame>
-#include <QtGui/QStyleOption>
-#include <QtGui/QMessageBox>
-#include <QtGui/QGridLayout>
-#include <QtGui/QMenuBar>
-#include <QtGui/QPainter>
-#include <QtGui/QPen>
+#include <QFrame>
+#include <QStyleOption>
+#include <QMessageBox>
+#include <QGridLayout>
+#include <QMenuBar>
+#include <QPainter>
+#include <QPen>
 
 #include "PaintTweenCUDA/cudaHostUtil.h"
 

@@ -620,7 +620,7 @@ bool SynthesisProcessor::accumulateRibbon(bool timeIsForwards, int width, int he
 
         std::cout << "done." << std::endl;
 
-        WAIT_AND_RETURN_IF_TERMINATED(status.toAscii());
+        WAIT_AND_RETURN_IF_TERMINATED(status.toStdString().c_str());
     }
 
     return true;

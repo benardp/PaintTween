@@ -1,6 +1,9 @@
 include_directories(
    ${OPENGL_INCLUDE_DIR}
    ${OPENEXR_INCLUDE_DIR}
+   ${Qt5Widgets_INCLUDE_DIRS}
+   ${Qt5Xml_INCLUDE_DIRS} 
+   ${Qt5OpenGL_INCLUDE_DIRS}
 )
 
 #-------------------------------------------------------------------------------
@@ -75,12 +78,11 @@ if(APPLE OR UNIX)
     )
 endif()
 
-QT4_WRAP_CPP(CPU_HEADERS_MOC stats.h)
+QT5_WRAP_CPP(CPU_HEADERS_MOC stats.h)
 
 _add_possibly_cuda_library(PaintTweenCUDA STATIC 
    ${CPU_SOURCE_FILES}
    ${CPU_HEADER_FILES}
-   ${CPU_HEADERS_MOC}
    ${CUDA_KERNEL_FILES}
    ${CUDA_HEADER_FILES}
 )

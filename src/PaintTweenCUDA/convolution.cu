@@ -25,6 +25,11 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 ******************************************************************************/
 
+#if _MSC_VER
+#define _USE_MATH_DEFINES
+#include <math.h>
+#endif
+
 #include "convolution.h"
 #include "cudaHostUtil.h"
 #include <assert.h>

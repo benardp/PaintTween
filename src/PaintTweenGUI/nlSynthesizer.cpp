@@ -36,8 +36,8 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include <cuda_gl_interop.h>
 
 #include <QtCore/QFile>
-#include <QtGui/QMessageBox>
-#include <QtGui/QStatusBar>
+#include <QMessageBox>
+#include <QStatusBar>
 #include <QtXml/QDomDocument>
 #include <QtNetwork/QHostInfo>
 

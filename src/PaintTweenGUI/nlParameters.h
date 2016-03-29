@@ -28,10 +28,11 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLPARAMETERS_H
 #define NLPARAMETERS_H
 
-#include <QtXml/QDomDocument>
-#include <QtCore/QHash>
-#include <QtCore/QStringList>
-#include <QtCore/QVector>
+#include <QObject>
+#include <QDomDocument>
+#include <QHash>
+#include <QStringList>
+#include <QVector>
 
 #include "PaintTweenCUDA/texSynth_interface.h"
 

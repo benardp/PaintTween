@@ -28,10 +28,10 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLMAINWINDOW_H
 #define NLMAINWINDOW_H
 
-#include <QtGui/QMainWindow>
-#include <QtGui/QComboBox>
-#include <QtGui/QAction>
-#include <QtCore/QVector>
+#include <QMainWindow>
+#include <QComboBox>
+#include <QAction>
+#include <QVector>
 
 #include "networkProtocol.h"
 #include "nlPlayRangeWidget.h"

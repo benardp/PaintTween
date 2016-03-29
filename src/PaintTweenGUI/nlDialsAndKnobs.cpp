@@ -27,8 +27,8 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include "nlDialsAndKnobs.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QGroupBox>
+#include <QLayout>
+#include <QGroupBox>
 
 NLVariant::NLVariant(QLayout *parent, const QString &paramName, const QString &text)
     : _paramName(paramName)

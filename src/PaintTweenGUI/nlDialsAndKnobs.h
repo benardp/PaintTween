@@ -28,13 +28,13 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef NLDIALSANDKNOBS_H
 #define NLDIALSANDKNOBS_H
 
-#include <QtGui/QWidget>
-#include <QtGui/QDoubleSpinBox>
-#include <QtGui/QSpinBox>
-#include <QtGui/QCheckBox>
-#include <QtGui/QComboBox>
-#include <QtGui/QLabel>
-#include <QtGui/QHBoxLayout>
+#include <QWidget>
+#include <QDoubleSpinBox>
+#include <QSpinBox>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QLabel>
+#include <QHBoxLayout>
 #include <QtCore/QVariant>
 
 #include "nlParameters.h"

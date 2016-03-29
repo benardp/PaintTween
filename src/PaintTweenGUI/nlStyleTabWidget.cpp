@@ -31,13 +31,13 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include <cmath>
 
-#include <QtGui/QFrame>
-#include <QtGui/QMessageBox>
-#include <QtGui/QGridLayout>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QMenuBar>
-#include <QtGui/QPainter>
-#include <QtGui/QPen>
+#include <QFrame>
+#include <QMessageBox>
+#include <QGridLayout>
+#include <QMouseEvent>
+#include <QMenuBar>
+#include <QPainter>
+#include <QPen>
 
 NLStyleTabWidget::NLStyleTabWidget(QWidget* parent) : QTabWidget(parent)
 { 

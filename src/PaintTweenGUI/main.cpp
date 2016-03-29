@@ -25,9 +25,9 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 ******************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtCore/QDebug>
-#include <QtCore/QString>
+#include <QApplication>
+#include <QDebug>
+#include <QString>
 
 #if _MSC_VER
 #include <string.h>
@@ -40,7 +40,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include "PaintTweenCUDA/imageIO.h"
 
-void msgHandler( QtMsgType type, const char* msg )
+void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     Q_UNUSED(type)
     fprintf( stderr, "%s\n", msg );
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 
     cmdline.parse();
 
-    qInstallMsgHandler( msgHandler );
+	qInstallMessageHandler(msgHandler);
 
     QString mode = "";
     if(cmdline.optionsFound.contains("mode"))

@@ -2,6 +2,9 @@ include_directories(
    ${OPENGL_INCLUDE_DIR}
    ${OPENEXR_INCLUDE_DIR}
    ${PROJECT_SOURCE_DIR}/src
+   ${Qt5Widgets_INCLUDE_DIRS}
+   ${Qt5Xml_INCLUDE_DIRS} 
+   ${Qt5OpenGL_INCLUDE_DIRS}
 )
 
 #-------------------------------------------------------------------------------
@@ -63,13 +66,11 @@ if(APPLE OR UNIX)
     )
 endif()
 
-QT4_WRAP_CPP(CPU_MOC_FILES ${CPU_MOC_HEADER_FILES})
-QT4_ADD_RESOURCES(CPU_RESOURCES_RCC ${CPU_RESOURCES})
+QT5_ADD_RESOURCES(CPU_RESOURCES_RCC ${CPU_RESOURCES})
 
 _add_possibly_cuda_executable( PaintTweenGUI 
    ${CPU_SOURCE_FILES}
    ${CPU_HEADER_FILES}
-   ${CPU_MOC_FILES}
    ${CPU_RESOURCES_RCC}
 )
 
@@ -77,14 +78,11 @@ target_link_libraries(PaintTweenGUI
    PaintTweenCUDA
    ${OPENGL_LIBRARY}
    ${OPENEXR_LIBRARIES}
-   ${QT_LIBRARIES}
+   Qt5::Widgets
+   Qt5::OpenGL
+   Qt5::Xml
+   Qt5::Network
    ${GLEW_LIBRARIES}
 )
-
-if(WIN32)
-  set_target_properties(PaintTweenGUI
-	PROPERTIES COMPILE_FLAGS "/Zc:wchar_t-" # Don't treat wchar_t as built-in type
-)
-endif(WIN32)
 
 install( TARGETS DESTINATION ${CMAKE_LIBDIR_BASE} )

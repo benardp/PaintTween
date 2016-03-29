@@ -1,6 +1,6 @@
 project(texSynth)
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.12)
 
 if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Debug")
@@ -14,12 +14,13 @@ set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake
 )
 
-find_package(Qt4 REQUIRED)
-SET(QT_USE_QTOPENGL TRUE)
-SET(QT_USE_QTXML TRUE)
-SET(QT_USE_QTNETWORK TRUE)
-INCLUDE(${QT_USE_FILE})
-ADD_DEFINITIONS(${QT_DEFINITIONS})
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Xml REQUIRED)
+find_package(Qt5Network REQUIRED)
+find_package(Qt5OpenGL REQUIRED)
 
 find_package(OpenGL REQUIRED)
 find_package(OpenEXR REQUIRED)

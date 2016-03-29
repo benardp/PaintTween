@@ -30,7 +30,6 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #if _MSC_VER
 #define snprintf sprintf_s
-#define log2f(X) logf(X)/logf(2)
 #endif
 
 void checkCUDAError(const char *msg);

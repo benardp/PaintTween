@@ -32,11 +32,6 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include <vector>
 #include <algorithm>
 
-#if _MSC_VER
-#define _USE_MATH_DEFINES
-#endif
-#include <math.h>
-
 #include <cuda_runtime.h>
 	
 #define EPSILON 0.000001f

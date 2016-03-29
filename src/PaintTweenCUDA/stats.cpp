@@ -27,9 +27,9 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include "stats.h"
 #include <assert.h>
-#include <QtGui/QTreeView>
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenu>
+#include <QTreeView>
+#include <QMainWindow>
+#include <QMenu>
 
 Stats Stats::_global_instance;
 
@@ -117,9 +117,10 @@ void Stats::updateView()
 {
     if (_layout_changed)
     {
-        QAbstractItemModel::reset();
+        QAbstractItemModel::beginResetModel();
         _layout_changed = false;
         _data_changed = false;
+		QAbstractItemModel::endResetModel();
     }
     else if (_data_changed)
     {

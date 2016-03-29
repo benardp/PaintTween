@@ -28,12 +28,12 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef _STATS_H_
 #define _STATS_H_
 
-#include <QtCore/QString>
-#include <QtCore/QList>
-#include <QtCore/QTime>
+#include <QString>
+#include <QList>
+#include <QTime>
 #include <vector>
-#include <QtCore/QAbstractItemModel>
-#include <QtGui/QDockWidget>
+#include <QAbstractItemModel>
+#include <QDockWidget>
 
 class QMenu;
 class QMainWindow;

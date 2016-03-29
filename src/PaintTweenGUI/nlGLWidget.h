@@ -32,7 +32,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 	#include "GL/glew.h"
 #endif
 
-#include <QtOpenGL/QGLWidget>
+#include <QGLWidget>
 
 #include "PaintTweenCUDA/texSynth_interface.h"
 

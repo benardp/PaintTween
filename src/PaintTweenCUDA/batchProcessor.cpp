@@ -33,8 +33,8 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include "imageIO.h"
 #include "stats.h"
 
-#include <QtCore/QDebug>
-#include <QtCore/QDir>
+#include <QDebug>
+#include <QDir>
 #include <iostream>
 
 BatchProcessor::BatchProcessor(SynthesisProcessor* parent)

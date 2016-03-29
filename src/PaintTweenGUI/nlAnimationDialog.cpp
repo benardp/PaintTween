@@ -28,10 +28,10 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include "nlAnimationDialog.h"
 #include "nlSynthesizer.h"
 
-#include <QtGui/QPushButton>
-#include <QtGui/QProgressBar>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QFileDialog>
+#include <QPushButton>
+#include <QProgressBar>
+#include <QVBoxLayout>
+#include <QFileDialog>
 
 #include <iostream>
 

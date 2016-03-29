@@ -28,13 +28,19 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef SYNTHESISIO_H
 #define SYNTHESISIO_H
 
-#include <QtCore/QString>
+#if _MSC_VER
+#define _USE_MATH_DEFINES
+#include <math.h>
+#endif
+
+#include "types.h"
+
+#include <QString>
 
 #include <ImfRgba.h>
 #include <ImfArray.h>
 #include <ImfCompression.h>
 
-#include "types.h"
 #include "dataAccess.h"
 
 class ImageIO

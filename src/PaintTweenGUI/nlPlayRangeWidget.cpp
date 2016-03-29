@@ -28,12 +28,12 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include "nlPlayRangeWidget.h"
 #include "nlSynthesizer.h"
 
-#include <QtGui/QLabel>
-#include <QtGui/QSpinBox>
-#include <QtGui/QToolButton>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QRadioButton>
+#include <QLabel>
+#include <QSpinBox>
+#include <QToolButton>
+#include <QHBoxLayout>
+#include <QGroupBox>
+#include <QRadioButton>
 
 #include <iostream>
 
