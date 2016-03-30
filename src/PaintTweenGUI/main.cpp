@@ -43,7 +43,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 void msgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     Q_UNUSED(type)
-    fprintf( stderr, "%s\n", msg );
+    fprintf( stderr, "%s\n", msg.toStdString().c_str() );
 
 #if _MSC_VER
     QString out = QString(msg) + QString("\n");

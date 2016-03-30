@@ -31,6 +31,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #include <cassert>
 #include <vector>
 #include <algorithm>
+#include <math.h>
 
 #include <cuda_runtime.h>
 	

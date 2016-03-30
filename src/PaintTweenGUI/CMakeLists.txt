@@ -68,6 +68,8 @@ endif()
 
 QT5_ADD_RESOURCES(CPU_RESOURCES_RCC ${CPU_RESOURCES})
 
+set(CMAKE_CXX_FLAGS ${PLATFORM_COMPILE_FLAGS})
+
 _add_possibly_cuda_executable( PaintTweenGUI 
    ${CPU_SOURCE_FILES}
    ${CPU_HEADER_FILES}

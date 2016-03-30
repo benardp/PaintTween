@@ -78,6 +78,8 @@ if(APPLE OR UNIX)
     )
 endif()
 
+set(CMAKE_CXX_FLAGS ${PLATFORM_COMPILE_FLAGS})
+
 QT5_WRAP_CPP(CPU_HEADERS_MOC stats.h)
 
 _add_possibly_cuda_library(PaintTweenCUDA STATIC 
@@ -90,7 +92,8 @@ _add_possibly_cuda_library(PaintTweenCUDA STATIC
 target_link_libraries(PaintTweenCUDA
    ${OPENGL_LIBRARY}
    ${OPENEXR_LIBRARIES}
-   ${QT_LIBRARIES}
+   Qt5::Widgets
+   Qt5::OpenGL
    ${GLEW_LIBRARIES}
 )
 
