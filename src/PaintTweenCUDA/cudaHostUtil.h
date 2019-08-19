@@ -28,10 +28,6 @@ production, please contact Pixar at tech-licensing@pixar.com.
 #ifndef CUDAHOSTUTIL_H
 #define CUDAHOSTUTIL_H
 
-#if _MSC_VER
-#define snprintf sprintf_s
-#endif
-
 void checkCUDAError(const char *msg);
 void checkCUDAError(const char *msg, const char *name);
 

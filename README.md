@@ -40,11 +40,11 @@ That said, you can also make some pretty nice animations with it.
 
 You need at least the following to run this code:
 
-- Linux, Mac OS X or Windows (tested on Windows 10, with Visual Studio 2013)
+- Linux, Mac OS X or Windows (tested on Windows 10, with Visual Studio 2017)
 - A CUDA-compatible GPU, capable of shader model 20. Fermi-architecture cards
    such as the Quadro 5000 or Geforce GTX580 work well.
-- CUDA 5.5 or later (and the corresponding version of gcc on Linux -- tested with Cuda 7.5)
-- Qt 5.x (tested with Qt 5.6)
+- CUDA 5.5 or later (and the corresponding version of gcc on Linux -- tested with Cuda 10.1)
+- Qt 5.x (tested with Qt 5.13)
 - OpenEXR 1.6 or later (tested with OpenEXR 2.2)
 
 
@@ -105,4 +105,4 @@ Once the interface loads, try:
    hit the "refresh" button. 
 
 
-July 17 2013 - Modified March 29 2016
+July 17 2013 - Modified August 19 2019

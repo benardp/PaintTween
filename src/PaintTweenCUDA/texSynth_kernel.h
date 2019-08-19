@@ -47,7 +47,7 @@ void uploadImage_float2(int level, TsImageLayer layer, const ImagePyramid<float2
 void uploadImage_Color4(int level, TsImageLayer layer, const ImagePyramid<Color4>& image, int styleLayer=0);
 void uploadImage_int(int level, TsImageLayer layer, const ImagePyramid<int>& image, int styleLayer=0);
 void uploadImage_float(int level, TsImageLayer layer, const ImagePyramid<float>& image, int styleLayer=0);
-void uploadParameters(TsParameters params);
+void uploadParameters(const TsParameters &params);
 void flipAnimBuffers();
 
 void randomizeOffsets(WorkingBuffers* buffers, int level);

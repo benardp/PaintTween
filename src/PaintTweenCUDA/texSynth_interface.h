@@ -30,7 +30,7 @@ production, please contact Pixar at tech-licensing@pixar.com.
 
 #include "types.h"
 
-#define NUM_MAX_STYLES 20
+#define NUM_MAX_STYLES 5
 
 typedef enum {
     TS_OUTPUT_CANVAS = 0,

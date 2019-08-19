@@ -95,6 +95,15 @@ static float gGaussianKernelSize = 0;
 __device__ __constant__ TsParameters gParams;
 __device__ __constant__ int gCurrentBuffer = 0;
 
+struct S
+{
+	float one;
+	int two;
+	bool three;
+};
+
+__device__ __constant__ S d_s;
+
 static int _currentBuffer = 0;
 
 void TexSynth::setup(TsParameters params)
@@ -104,12 +113,12 @@ void TexSynth::setup(TsParameters params)
         gGaussianKernelSize = params.residualWindowSize;
     }
     uploadParameters(params);
-    cudaMemcpyToSymbol(gCurrentBuffer, &_currentBuffer,sizeof(int));
+    cudaMemcpyToSymbol(gCurrentBuffer, &_currentBuffer, sizeof(int));
 }
 
-void TexSynth::uploadParameters(TsParameters params)
+void TexSynth::uploadParameters(const TsParameters &params)
 {
-    cudaMemcpyToSymbol(gParams, &params,sizeof(params));
+    cudaMemcpyToSymbol(gParams, &params, sizeof(TsParameters));
     checkCUDAError("Copy params to constant memory");
 }
 

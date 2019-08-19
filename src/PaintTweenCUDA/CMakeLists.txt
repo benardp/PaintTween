@@ -80,9 +80,9 @@ endif()
 
 set(CMAKE_CXX_FLAGS ${PLATFORM_COMPILE_FLAGS})
 
-QT5_WRAP_CPP(CPU_HEADERS_MOC stats.h)
+#QT5_WRAP_CPP(CPU_HEADERS_MOC stats.h)
 
-_add_possibly_cuda_library(PaintTweenCUDA STATIC 
+add_library(PaintTweenCUDA STATIC 
    ${CPU_SOURCE_FILES}
    ${CPU_HEADER_FILES}
    ${CUDA_KERNEL_FILES}

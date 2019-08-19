@@ -61,7 +61,7 @@ void NLSynthesizer::initialize(int cudaDevice)
 void NLSynthesizer::initialize(NLMainWindow* mainWindow, int cudaDevice)
 {
     std::cout << "Initializing CUDA at device " << cudaDevice << "... " << std::endl;
-    cudaGLSetGLDevice(cudaDevice);
+    //cudaGLSetGLDevice(cudaDevice);
     std::cout << "done." << std::endl;
 
     _synthesisProcessor = new SynthesisProcessor(this);
@@ -95,7 +95,7 @@ void NLSynthesizer::finalCleanUp()
 
     _synthesisProcessor->si_cleanupSynthesis();
 
-    cudaThreadExit();
+    cudaDeviceSynchronize();
 }
 
 bool NLSynthesizer::readWorkingSet(const QString& filename, bool styleRefreshOnly)
